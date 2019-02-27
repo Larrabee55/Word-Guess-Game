@@ -3,6 +3,7 @@ var wins = 0;
 var jediChoices = ["kenobi", "anikan", "luke", "quigongin", "yoda", "windu"];
 // empty array to hold letter guessed
 var lettersGuessed = [];
+var remainingGuesses = 13;
 // all the letters of the alphabet
 var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
   "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "
@@ -63,9 +64,9 @@ document.onkeyup = function (event) {
       }
       // if the users guess isn't a letter it - 1 off the remaining guesses
       if (letterFound === false) {
-        remainingGuesses--;
+        console.log(remainingGuesses--);
       }
-      guessesLeft.text = remainingGuesses;
+
       // if remaining guesses hits 0 then the user looses
       if (remainingGuesses <= 0) {
         // gives the user the option to play again
